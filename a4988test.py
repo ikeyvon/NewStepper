@@ -39,10 +39,10 @@ class pressure_sensor:
             self.hx.set_reference_unit(referenceUnit)
             self.hx.reset()
             self.hx.tare()
-            while True:
-                self.pressure = self.read_sensor_test()
-                print(self.pressure)
-                time.sleep(0.001)
+#             while True:
+#                 self.pressure = self.read_sensor_test()
+#                 print(self.pressure)
+#                 time.sleep(0.001)
 
         def read_sensor_test(self):
             val = self.hx.get_weight(5)
@@ -64,6 +64,7 @@ GPIO.output(ENABLE_GPIO,False)
 motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.005, verbose=False, initdelay=.05)
 
 while True:
+    print('HERE')
     pressure = sensor.read_sensor_test()
     
     if GPIO.input(FORWARD_BUTTON_GPIO) == True:
