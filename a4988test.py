@@ -63,10 +63,13 @@ GPIO.output(ENABLE_GPIO,False)
 
 while True:
     pressure = sensor.read_sensor_test()
+    if GPIO.input(FORWARD_BUTTON_GPIO) == True:
+        print(1234567890)
 
     if GPIO.input(FORWARD_BUTTON_GPIO) == True  and pressure<=high_pressure_threshold:
-        motor.motor_go(clockwise=False, steptype="Full", steps=50, stepdelay=.005, verbose=False, initdelay=.05)
         print('for')
+        motor.motor_go(clockwise=False, steptype="Full", steps=50, stepdelay=.005, verbose=False, initdelay=.05)
+        
 
     elif GPIO.input(BACKWARD_BUTTON_GPIO) == True  and pressure>=low_pressure_threshold:
         motor.motor_go(clockwise=True, steptype="Full", steps=50, stepdelay=.005, verbose=False, initdelay=.05)
