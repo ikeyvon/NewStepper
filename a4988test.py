@@ -61,7 +61,6 @@ GPIO.setup(BACKWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.005, verbose=False, initdelay=.05)
 
 while True:
-    print('HERE')
     pressure = sensor.read_sensor_test()
     
     if GPIO.input(FORWARD_BUTTON_GPIO) == True:
