@@ -56,10 +56,7 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(FORWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(BACKWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-GPIO.setup(ENABLE_GPIO, GPIO.OUT)
-GPIO.setup(DIRECTION_GPIO, GPIO.OUT)
 
-GPIO.output(ENABLE_GPIO,False)
 
 motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.005, verbose=False, initdelay=.05)
 
