@@ -58,7 +58,7 @@ GPIO.setup(FORWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(BACKWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 
-motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.005, verbose=False, initdelay=.05)
+motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.002, verbose=False, initdelay=.05)
 
 pressure = 1
 
@@ -68,9 +68,9 @@ while True:
 
     if GPIO.input(FORWARD_BUTTON_GPIO) == True  and pressure<=high_pressure_threshold:
         print('for')
-        motor.motor_go(clockwise=False, steptype="Full", steps=100, stepdelay=.05, verbose=False, initdelay=.05)
+        motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.002, verbose=False, initdelay=.05)
         
 
     elif GPIO.input(BACKWARD_BUTTON_GPIO) == True  and pressure>=low_pressure_threshold:
-        motor.motor_go(clockwise=True, steptype="Full", steps=100, stepdelay=.05, verbose=False, initdelay=.05)
+        motor.motor_go(clockwise=True, steptype="Full", steps=250, stepdelay=.002, verbose=False, initdelay=.05)
         print('back')
