@@ -9,8 +9,8 @@ high_pressure_threshold=36000###########################3
 
 sensor_pins = [27,17] # [out,sck]##########################33
 
-FORWARD_BUTTON_GPIO = 16##########################
-BACKWARD_BUTTON_GPIO = 12##########################
+FORWARD_BUTTON_GPIO = 12##########################
+BACKWARD_BUTTON_GPIO = 16##########################
 
 
 #define GPIO pins
@@ -58,7 +58,7 @@ GPIO.setup(FORWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(BACKWARD_BUTTON_GPIO, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 
-motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.002, verbose=False, initdelay=.05)
+# motor.motor_go(clockwise=False, steptype="Full", steps=250, stepdelay=.002, verbose=False, initdelay=.05)
 
 pressure = 1
 
